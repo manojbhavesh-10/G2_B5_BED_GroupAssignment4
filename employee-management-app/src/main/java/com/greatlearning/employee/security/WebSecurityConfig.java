@@ -49,7 +49,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 		        .antMatchers("/addEmployee", "/updateEmployee", "/deleteEmployeeById", "/addUser", "/addRole")
 				.hasAuthority("ADMIN")
 				.antMatchers("/getAllEmployee", "/getEmployeeById", "/sortEmployee", "/search", "/getAllUser","/getAllRoles")
-				.hasAnyAuthority("USER, ADMIN")
+				.hasAnyAuthority("USER", "ADMIN")
 				.antMatchers("/").permitAll()
 				.and().formLogin();
 
